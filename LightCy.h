@@ -39,7 +39,7 @@ class LightCy : public GlutWindow
 		   for better performance */
 		void compile_terrain();
 
-		/*	initialise the objects in the game */
+		/* initialise the objects in the game */
 		void initialise_game();
 		
 		/* reset the game the the initial state */
