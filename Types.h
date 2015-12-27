@@ -3,8 +3,13 @@
 #include <tuple>
 #include <cmath>
 
+/* type representing RGB values */
 using RGBValue = std::tuple<float, float, float>;
+
+/* type for XY coordinates */
 using XYCoordinate = std::tuple<float, float>;
+
+/* type for XYZ coordinates */
 using XYZCoordinate = std::tuple<float, float, float>;
 
 /* check to see if c is between a and b */

@@ -32,7 +32,6 @@ class Trail : public DrawableGameObject
 			const XYCoordinate& b) const; 
 			
 	private:
-		
 		/* trim the trail to make sure its length 
 		   doesn't exceed the maximum length */
 		void trim();

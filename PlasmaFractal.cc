@@ -64,15 +64,15 @@ void PlasmaFractal::random_midpoint_displacement(std::size_t max_y, std::size_t 
 	
 	if(area > 1)
 	{
-		//top
+		//middle of top edge
 		heightmap[mid_x][max_y] = (heightmap[max_x][max_y] + heightmap[min_x][max_y]) / 2;
-		//bottom
+		//middle of bottom edge
 		heightmap[mid_x][min_y] = (heightmap[max_x][min_y] + heightmap[min_x][min_y]) / 2;
-		//left
+		//middle of left edge
 		heightmap[min_x][mid_y] = (heightmap[min_x][max_y] + heightmap[min_x][min_y]) / 2;
-		//right
+		//middle of right edge
 		heightmap[max_x][mid_y] = (heightmap[max_x][max_y] + heightmap[max_x][min_y]) / 2;
-		//middle
+		//middle of middle edge
 		heightmap[mid_x][mid_y] = (heightmap[min_x][max_y] + heightmap[min_x][min_y]
 							+ heightmap[max_x][max_y] + heightmap[max_x][min_y]) / 4;
 		//randomly displace the midpoint
@@ -97,5 +97,5 @@ void PlasmaFractal::random_midpoint_displacement(std::size_t max_y, std::size_t 
 
 float PlasmaFractal::displacement_function(float area) const
 {
-	return 0.5 * sqrt(area) * ((((float) rand() / RAND_MAX)) - 0.5); 
+	return 0.5 * sqrt(area) * (((static_cast<float>(rand()) / RAND_MAX)) - 0.5); 
 }

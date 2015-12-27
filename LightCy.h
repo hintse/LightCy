@@ -97,8 +97,7 @@ class LightCy : public GlutWindow
 		static constexpr auto map_size_y = 512;
 		
 		/* time to countdown before game starts */
-		static constexpr auto start_countdown_time = 3.5f;
-		
+		static constexpr auto start_countdown_time = 3.0f;
 };
 
 #endif

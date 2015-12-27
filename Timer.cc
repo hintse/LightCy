@@ -27,5 +27,5 @@ float Timer::get_previous_frame_delta() const
 	if(previous_fps_ < fps_threshold)
 		return 0.0f;
 	else
-		return 1.0f / (float) previous_fps_;
+		return 1.0f / static_cast<float>(previous_fps_);
 }

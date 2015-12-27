@@ -3,7 +3,10 @@
 #include <vector>
 #include "Types.h"
 
+/* type representing the heightmap */
 using HeightMap = std::vector<std::vector<float>>;
+
+/* type representing the map of surface normals */
 using VectorMap = std::vector<std::vector<Vector>>;
 
 /* class representing a plasma fractal */

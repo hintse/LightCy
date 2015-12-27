@@ -25,8 +25,8 @@ LightCy::~LightCy()
 void LightCy::CallBackReshapeFunc(int newWidth, int newHeight)
 {
 	/* save the window width and height for later use */
-	window_width_ = (float)newWidth;
-	window_height_ = (float)newHeight;
+	window_width_ = static_cast<float>(newWidth);
+	window_height_ = static_cast<float>(newHeight);
 
 	/* instruct openGL to use the entirety of our window */
 	glViewport(0, 0, newWidth, newHeight);

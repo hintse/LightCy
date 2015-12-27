@@ -31,11 +31,11 @@ void Terrain::draw()
 			glColor3f(0.4, 0.4, 0.4);
 			glNormal3f(fractal_->face_normal_map[i][j].i(), fractal_->face_normal_map[i][j].j(), 
 				fractal_->face_normal_map[i][j].k());
-			glVertex3f((float) i,(float) j, fractal_->heightmap[i][j]);	
+			glVertex3f(static_cast<float>(i) ,static_cast<float>(j), fractal_->heightmap[i][j]);	
 			
 			glNormal3f(fractal_->face_normal_map[i][j + 1].i(), fractal_->face_normal_map[i][j + 1].j(), 
 				fractal_->face_normal_map[i][j + 1].k());
-			glVertex3f((float) i,(float) j + 1, fractal_->heightmap[i][j + 1]);	
+			glVertex3f(static_cast<float>(i), static_cast<float>(j) + 1, fractal_->heightmap[i][j + 1]);	
 		}
 		glEnd();
 	}
@@ -49,11 +49,11 @@ void Terrain::draw()
 			glColor3f(0.0f, 1.0f, 0.0f);
 			glNormal3f(fractal_->face_normal_map[i][j].i(), fractal_->face_normal_map[i][j].j(), 
 				fractal_->face_normal_map[i][j].k());
-			glVertex3f((float) i,(float) j, fractal_->heightmap[i][j] + 0.1);	
+			glVertex3f(static_cast<float>(i), static_cast<float>(j), fractal_->heightmap[i][j] + 0.1);	
 			
 			glNormal3f(fractal_->face_normal_map[i][j + 1].i(), fractal_->face_normal_map[i][j + 1].j(), 
 				fractal_->face_normal_map[i][j + 1].k());
-			glVertex3f((float) i,(float) j + 1, fractal_->heightmap[i][j + 1] + 0.1);	
+			glVertex3f(static_cast<float>(i), static_cast<float>(j) + 1, fractal_->heightmap[i][j + 1] + 0.1);	
 		}
 		glEnd();
 	}
@@ -62,10 +62,10 @@ void Terrain::draw()
 
 float Terrain::get_height(float x, float y) const
 {
-	auto x1 = int(x);
-	auto x2 = int(x1 + 1);
-	auto y1 = int(y);
-	auto y2 = int(y1 + 1);
+	auto x1 = static_cast<int>(x);
+	auto x2 = static_cast<int>(x1 + 1);
+	auto y1 = static_cast<int>(y);
+	auto y2 = static_cast<int>(y1 + 1);
 	if((x1 < 0) || (y1 < 0))
 		return 0;
 	if((x2 >= fractal_->get_max_x() - 1) || (y2 >= fractal_->get_max_y() - 1))

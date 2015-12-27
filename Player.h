@@ -108,7 +108,6 @@ class Player : public DrawableGameObject
 		/* initial direction of the player (so we can reset it) */
 		int initial_direction_;
 		
-		
 };
 
 #endif
