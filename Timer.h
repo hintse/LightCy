@@ -1,5 +1,6 @@
 #ifndef TIMER_H
 #define TIMER_H
+#include <chrono>
 
 /* class representing a timer */
 class Timer
@@ -16,9 +17,8 @@ class Timer
 		float get_previous_frame_delta() const;
 
 	private:
-		/* seconds since epoch last time get_previous_frame_delta
-		   was called */
-		unsigned int previous_time_value_;
+		/* time_point when the last time get_fps was called */
+		std::chrono::high_resolution_clock::time_point previous_time_value_;
 		
 		/* frame count */
 		unsigned int frame_count_;

@@ -1,17 +1,17 @@
 #include "Timer.h"
-#include <ctime>
 
 Timer::Timer()
-	: previous_time_value_(std::time(NULL))
+	: previous_time_value_(std::chrono::high_resolution_clock::now())
 	, frame_count_(0)
 	, previous_fps_(0){ }
 	
 bool Timer::get_fps(unsigned int& fps)
 {
 	auto retval = false;
-	auto tick = std::time(NULL);
+	auto tick = std::chrono::high_resolution_clock::now();
+	auto duration = tick - previous_time_value_;
 	fps = frame_count_;
-	if(tick - previous_time_value_ >= 1) //1 second has elapsed
+	if(std::chrono::duration_cast<std::chrono::milliseconds>(duration).count() >= 1000)
 	{
 		retval = true;
 		previous_fps_ = frame_count_;
